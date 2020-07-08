@@ -1,0 +1,54 @@
+* {
+  background-color: #9ae7a1;
+  border: 1px solid #f0f0f0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 
+    "... ...... ...... ...... ...... ...... ..." 
+    "... header header header header header ..." 150px
+    "... ...... ...... ...... ...... ...... ..." 10px
+    "... left   ...... center ...... right  ..." 1fr
+    "... ...... ...... ...... ...... ...... ..." 10px
+    "... footer footer footer footer footer ..." 300px
+    "... ...... ...... ...... ...... ...... ..." 
+    / auto 150px 20px 1fr 30px 200px auto;
+}
+
+header {
+  grid-area: header;
+}
+
+
+nav {
+  grid-area: left;
+}
+
+main {
+  grid-area: center;
+}
+
+aside {
+  grid-area: right;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    grid-template: 
+      "header" 150px
+      "center" 1fr
+      "left  "
+      "right "
+      "footer" 300px;
+  }
+}
